@@ -1,0 +1,162 @@
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+.page5-container{
+
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(135deg,#ff758c,#ff7eb3);
+
+}
+
+
+
+.final-card{
+
+    width:80%;
+    max-width:600px;
+    padding:40px;
+    text-align:center;
+    color:white;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.4);
+
+    animation:cardShow 1.5s ease;
+
+}
+
+
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+.final-card h1{
+
+    font-size:45px;
+
+    animation:textGlow 2s infinite;
+
+}
+
+
+
+@keyframes textGlow{
+
+    50%{
+
+        text-shadow:
+        0 0 20px white;
+
+    }
+
+}
+
+
+
+.final-card p{
+
+    font-size:20px;
+    line-height:1.6;
+
+}
+
+
+
+.heart-icon{
+
+    font-size:80px;
+
+    animation:heartBeat 1.5s infinite;
+
+}
+
+
+
+@keyframes heartBeat{
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+
+.final-card button{
+
+    margin-top:25px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    background:white;
+
+    color:#ff4081;
+
+    cursor:pointer;
+
+    animation:buttonPulse 2s infinite;
+
+}
+
+
+
+@keyframes buttonPulse{
+
+    50%{
+
+        transform:scale(1.08);
+
+        box-shadow:0 0 30px white;
+
+    }
+
+}

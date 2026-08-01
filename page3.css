@@ -1,0 +1,541 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(-45deg,#ffd6e7,#ffeaf3,#fff6fb,#ffd9ec);
+
+background-size:400% 400%;
+
+animation:bgMove 15s ease infinite;
+
+}
+
+/* Animated Background */
+
+@keyframes bgMove{
+
+0%{background-position:0% 50%;}
+
+50%{background-position:100% 50%;}
+
+100%{background-position:0% 50%;}
+
+}
+
+/* Floating Background Blur */
+
+.background{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+z-index:-2;
+
+}
+
+.background::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#ff6ea5;
+
+filter:blur(180px);
+
+border-radius:50%;
+
+left:-120px;
+
+top:-120px;
+
+animation:move1 10s infinite alternate;
+
+opacity:.35;
+
+}
+
+.background::after{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#ffc2dd;
+
+filter:blur(180px);
+
+border-radius:50%;
+
+right:-120px;
+
+bottom:-120px;
+
+animation:move2 12s infinite alternate;
+
+opacity:.35;
+
+}
+
+@keyframes move1{
+
+from{transform:translateY(0);}
+
+to{transform:translateY(120px);}
+
+}
+
+@keyframes move2{
+
+from{transform:translateY(0);}
+
+to{transform:translateY(-120px);}
+
+}
+
+/* ======================
+ ENVELOPE
+====================== */
+
+.envelope-container{
+
+position:absolute;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+width:100%;
+
+height:100%;
+
+transition:.8s;
+
+}
+
+.envelope{
+
+position:relative;
+
+width:320px;
+
+height:220px;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+.envelope:hover{
+
+transform:scale(1.05);
+
+}
+
+.front{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:#ff5b9f;
+
+clip-path:polygon(0 0,100% 0,50% 60%);
+
+z-index:3;
+
+}
+
+.letter{
+
+position:absolute;
+
+width:92%;
+
+height:88%;
+
+left:4%;
+
+top:6%;
+
+background:white;
+
+border-radius:15px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+.letter h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:42px;
+
+color:#ff2e63;
+
+margin-bottom:15px;
+
+}
+
+.letter p{
+
+font-size:18px;
+
+color:#777;
+
+}
+
+/* ======================
+ MAIN CARD
+====================== */
+
+.card{
+
+width:720px;
+
+padding:40px;
+
+background:rgba(255,255,255,.22);
+
+backdrop-filter:blur(18px);
+
+border-radius:30px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+text-align:center;
+
+animation:pop .8s;
+
+}
+
+.hidden{
+
+display:none;
+
+}
+
+@keyframes pop{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+/* ==========================
+   KITTY IMAGE
+========================== */
+
+.kitty{
+    width:220px;
+    border-radius:25px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(255,105,180,.35);
+    transition:.4s;
+    animation:floatKitty 4s ease-in-out infinite;
+}
+
+.kitty:hover{
+    transform:scale(1.08) rotate(-3deg);
+}
+
+@keyframes floatKitty{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+/* ==========================
+   HEADING
+========================== */
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:60px;
+    color:#ff2e63;
+    margin-bottom:20px;
+    text-shadow:0 0 18px rgba(255,80,140,.5);
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 12px #ff7ab8;
+    }
+    to{
+        text-shadow:0 0 30px #ff2e63;
+    }
+}
+
+/* ==========================
+   TYPING TEXT
+========================== */
+
+#typingText{
+    font-size:21px;
+    line-height:2;
+    color:#444;
+    min-height:220px;
+    white-space:pre-wrap;
+    margin:20px 0;
+}
+
+/* ==========================
+   QUOTE BOX
+========================== */
+
+.quote-box{
+
+margin-top:25px;
+
+padding:18px;
+
+background:rgba(255,255,255,.35);
+
+border-radius:18px;
+
+backdrop-filter:blur(10px);
+
+}
+
+.quote{
+
+font-style:italic;
+
+color:#ff2e63;
+
+font-size:18px;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+button{
+
+margin-top:25px;
+
+padding:16px 38px;
+
+border:none;
+
+border-radius:40px;
+
+font-size:18px;
+
+font-weight:600;
+
+background:linear-gradient(45deg,#ff2e63,#ff7ab8);
+
+color:white;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 10px 25px rgba(255,46,99,.35);
+
+}
+
+button:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+box-shadow:0 15px 35px rgba(255,46,99,.5);
+
+}
+
+/* ==========================
+   HEARTS
+========================== */
+
+.heart{
+
+position:fixed;
+
+font-size:20px;
+
+pointer-events:none;
+
+animation:heartFloat linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+/* ==========================
+   SPARKLES
+========================== */
+
+.sparkle{
+
+position:fixed;
+
+width:8px;
+
+height:8px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:0 0 12px white;
+
+animation:sparkle 3s linear infinite;
+
+}
+
+@keyframes sparkle{
+
+0%{
+
+opacity:0;
+
+transform:scale(.2);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(.2);
+
+}
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.card{
+
+width:92%;
+
+padding:25px;
+
+}
+
+.kitty{
+
+width:170px;
+
+}
+
+h1{
+
+font-size:42px;
+
+}
+
+#typingText{
+
+font-size:17px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
